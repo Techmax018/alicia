@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Something Sweet ✨ For You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fff9f0 0%, #ffe6d5 100%);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        /* Main card */
+        .card {
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            padding: 2rem 1.8rem 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 180, 0.7);
+        }
+
+        /* floating hearts background (CSS only) */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.4rem;
+            opacity: 0.2;
+            animation: floatHeart linear infinite;
+            user-select: none;
+            color: #e6697e;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(20deg);
+                opacity: 0.5;
+            }
+        }
+
+        /* emoji star */
+        .star-badge {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            animation: gentleWave 2s infinite ease;
+        }
+
+        @keyframes gentleWave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(12deg) scale(1.05); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #c45c2c, #e38b5a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+
+        .sub {
+            font-size: 1rem;
+            color: #b97f5a;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed #f3cfb5;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .message-box {
+            background: #ffffffcc;
+            border-radius: 36px;
+            padding: 1.5rem;
+            margin: 1rem 0 1.4rem;
+            box-shadow: inset 0 0 0 1px #fff9f2, 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .sweet-text {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #4b2e21;
+            font-weight: 450;
+        }
+
+        .sweet-text span {
+            display: inline-block;
+            animation: bounceSoft 1.2s infinite;
+        }
+
+        @keyframes bounceSoft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #f7d1b3;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #7b3f1f;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            font-family: inherit;
+            backdrop-filter: blur(2px);
+        }
+
+        button:hover {
+            background: #f3bc91;
+            transform: scale(0.96);
+            color: white;
+            box-shadow: 0 5px 12px rgba(199, 97, 32, 0.2);
+        }
+
+        .secret-zone {
+            margin-top: 1.8rem;
+            background: #fff2e6;
+            border-radius: 40px;
+            padding: 0.8rem;
+            transition: all 0.2s;
+        }
+
+        .compliment-box {
+            font-size: 1rem;
+            color: #bb6b3a;
+            font-weight: 500;
+            padding: 0.5rem;
+            border-radius: 100px;
+            background: #fff3e8;
+        }
+
+        #complimentText {
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        footer {
+            font-size: 0.7rem;
+            color: #d9a77a;
+            margin-top: 1.5rem;
+            letter-spacing: 0.4px;
+        }
+
+        @media (max-width: 480px) {
+            .card { padding: 1.8rem; }
+            h1 { font-size: 1.9rem; }
+            .sweet-text { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-hearts" id="heartsContainer"></div>
+
+<div class="card">
+    <div class="star-badge">🌸 ✨</div>
+    <h1>Alicia ijust a little something<br>sweet for you</h1>
+    <div class="sub">because why not 🤍</div>
+
+    <div class="message-box">
+        <div class="sweet-text">
+            “ You don’t have to be perfect to be <span>❤️</span> worthy. <br>
+            But somehow, even the small things about you<br>
+            feel like sunshine. ”
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button id="cuteBtn">☁️ press for a smile</button>
+        <button id="flowerBtn">🌼 one more thing</button>
+    </div>
+
+    <div class="secret-zone" id="secretZone" style="display: none;">
+        <div class="compliment-box">
+            ✨ <span id="complimentText">you make ordinary moments feel warm</span> ✨
+        </div>
+    </div>
+
+    <footer>for your eyes only 🌙</footer>
+</div>
+
+<script>
+    // floating hearts background (dynamic)
+    function createHeart() {
+        const heartContainer = document.getElementById('heartsContainer');
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = ['❤️', '🧡', '💛', '💖', '🌸', '🌼'][Math.floor(Math.random() * 6)];
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+        heart.style.animationDuration = Math.random() * 8 + 6 + 's';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        heartContainer.appendChild(heart);
+        
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+    }
+
+    // generate 12 hearts on load and then every 3 sec
+    for(let i = 0; i < 14; i++) {
+        setTimeout(() => createHeart(), i * 400);
+    }
+    setInterval(createHeart, 3800);
+
+    // sweet compliments list
+    const compliments = [
+        "you smile like you know something good",
+        "i like the way you exist, calmly and fully",
+        "your vibe feels like cinnamon and quiet evenings",
+        "you don't chase attention but somehow get it",
+        "being around you feels easy (rare thing)",
+        "you have a gentle kind of strength",
+        "you're not just pretty — you're present",
+        "there's something real about you, i notice it",
+        "you deserve soft things and slow mornings"
+    ];
+
+    let complimentIndex = 0;
+    const secretZone = document.getElementById('secretZone');
+    const complimentSpan = document.getElementById('complimentText');
+
+    // Button 1: cute interactive message with sweet alert style ( no alert, just inline )
+    const cuteBtn = document.getElementById('cuteBtn');
+    const msgBoxDiv = document.querySelector('.message-box .sweet-text');
+    let clickCount = 0;
+
+    cuteBtn.addEventListener('click', () => {
+        clickCount++;
+        const sweetMessages = [
+            "✨ you just made this page blush ✨",
+            "🌷 okay but your energy? really nice.",
+            "🌟 you looked away and i smiled. not fair.",
+            "🍰 here's a digital cupcake just because 🧁",
+            "💬 ...and your laugh would probably make it worse 💬"
+        ];
+        if(clickCount <= sweetMessages.length) {
+            msgBoxDiv.innerHTML = `“ ${sweetMessages[clickCount-1]} ”`;
+        } else {
+            msgBoxDiv.innerHTML = `“ okay, you're spoiling me now 😄 but i don't mind. you're sweet. ”`;
+        }
+
+        // show the secret compliment zone after 1st click if not visible
+        if(secretZone.style.display === 'none') {
+            secretZone.style.display = 'block';
+            complimentSpan.innerText = compliments[0];
+            complimentIndex = 1;
+        } else {
+            // rotate compliment on each cute click
+            complimentSpan.innerText = compliments[complimentIndex % compliments.length];
+            complimentIndex++;
+        }
+    });
+
+    // Button 2: flower / another thing → shows different warm text + fresh compliment
+    const flowerBtn = document.getElementById('flowerBtn');
+    flowerBtn.addEventListener('click', () => {
+        // always show secret zone if hidden
+        if(secretZone.style.display === 'none') {
+            secretZone.style.display = 'block';
+        }
+        // random compliment from array
+        const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+        complimentSpan.innerText = randomCompliment;
+        
+        // additional sweet message in main box but preserve gentle vibe
+        const flowerMessages = [
+            "🌻 some people feel like golden hour — you're one of them",
+            "🌼 no rush, no pressure. just glad we're talking.",
+            "🌸 you don't even have to try, that's the thing",
+            "🌿 honesty looks good on you, keep it",
+            "✨ small moments with you > big moments elsewhere"
+        ];
+        const randomFlowerMsg = flowerMessages[Math.floor(Math.random() * flowerMessages.length)];
+        msgBoxDiv.innerHTML = `“ ${randomFlowerMsg} ”`;
+        
+        // bonus: tiny wiggle effect on card
+        const card = document.querySelector('.card');
+        card.style.transform = 'scale(1.01)';
+        setTimeout(() => { card.style.transform = ''; }, 200);
+    });
+    
+    // initial subtle zone hidden until interaction
+    secretZone.style.display = 'none';
+    
+    // optional: if you want to preload some nice feeling
+    console.log("sweet page ready — made for someone special ✨");
+</script>
+</body>
